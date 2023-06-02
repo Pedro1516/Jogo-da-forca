@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifdef _WIN32 //  _WIN64
+#if define(_WIN32) || defined(_WIN64)
 #include <Windows.h>
 #else
 #include <unistd.h>
@@ -202,7 +202,7 @@ void update()
 
 void esperar(int time)
 {
-#ifdef _WIN32 // _WIN64
+#if defined(_WIN32) || defined(_WIN64)
 	Sleep(time);
 #else
 	sleep(time);
